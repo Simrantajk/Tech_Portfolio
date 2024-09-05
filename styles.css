@@ -1,0 +1,373 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffe6f0;
+    color: #333;
+}
+
+/* Header Section */
+.header {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    text-align: center;
+    padding: 60px 0;
+    color: #fff;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+/* About Me Section */
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.float-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+    border: 5px solid #ffafbd;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px;
+    background-color: #fff0f5;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    display: inline-block;
+    background-color: #fff;
+    width: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    vertical-align: top;
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.project-info a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff69b4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Me Section */
+.contact {
+    padding: 50px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 1rem;
+    color: #ff69b4;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #ffafbd;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .about p, .contact p {
+        padding: 0 20px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffe6f0;
+    color: #333;
+}
+
+/* Header Section */
+.header {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    text-align: center;
+    padding: 60px 0;
+    color: #fff;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+/* About Section */
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    max-width: 600px;
+    margin-right: 30px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.float-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+    border: 5px solid #ffafbd;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Key Expertise Section */
+.expertise {
+    padding: 50px;
+    background-color: #fff0f5;
+    text-align: center;
+}
+
+.expertise h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 40px;
+}
+
+.floating-div {
+    background-color: #ffafbd;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.floating-div:hover {
+    transform: translateY(-10px);
+}
+
+/* Activities Section */
+.activities {
+    padding: 50px;
+    background-color: #ffe6f0;
+}
+
+.activities h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.activities ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Personal Interests Section */
+.personal-interests {
+    padding: 50px;
+    background-color: #fff0f5;
+    text-align: center;
+}
+
+.personal-interests h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.personal-interests ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 1rem;
+    color: #ff69b4;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #ffafbd;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        margin-right: 0;
+    }
+
+    .project-card {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
