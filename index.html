@@ -1,195 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simran Taj | Web UI Developer</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simran Taj | Software Engineer</title>
+<meta name="description" content="Simran Taj, software engineer in Bengaluru. Python, C#/.NET Core, REST APIs and AI agents.">
+<style>
+:root{--bg:#0b1020;--bg2:#121a33;--card:#161f3d;--line:#26325c;--tx:#e8ecff;--mut:#9aa6d1;--a:#7c9cff;--b:#43e0c1;--r:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+nav b{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;color:transparent}
+nav div a{margin-left:20px;color:var(--mut);font-size:.92rem}
+nav div a:hover{color:var(--tx)}
+.hero{padding:96px 0 70px;text-align:center;background:radial-gradient(700px 320px at 50% 0,rgba(124,156,255,.22),transparent)}
+.hero small{color:var(--b);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.08;margin:10px 0}
+.grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;color:transparent}
+.type{font-size:clamp(1.05rem,2.6vw,1.35rem);color:var(--mut);min-height:2em}
+.type span{border-right:2px solid var(--b);padding-right:3px}
+.btns{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 24px;border-radius:999px;border:1px solid var(--line);font-weight:600;transition:.2s}
+.btn.p{background:linear-gradient(90deg,var(--a),var(--b));color:#06101f;border:0}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,156,255,.25)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:-30px auto 0;position:relative}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;text-align:center}
+.stat b{font-size:2rem;display:block}
+.stat span{color:var(--mut);font-size:.88rem}
+section{padding:72px 0}
+h2{font-size:1.9rem;margin-bottom:26px}
+h2::after{content:"";display:block;width:54px;height:4px;border-radius:4px;margin-top:8px;background:linear-gradient(90deg,var(--a),var(--b))}
+.about{display:grid;grid-template-columns:1fr 220px;gap:36px;align-items:center}
+.about p{color:var(--mut);margin-bottom:14px}.about strong{color:var(--tx)}
+.avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;border:3px solid var(--a);box-shadow:0 0 0 8px rgba(124,156,255,.12)}
+.job{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.job h3{font-size:1.1rem}.job em{color:var(--b);font-style:normal;font-size:.9rem}
+.job ul,.card ul{margin:12px 0 0 18px;color:var(--mut)}.job li,.card li{margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;cursor:pointer;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--a);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.card h3{display:flex;justify-content:space-between;align-items:center;font-size:1.08rem}
+.card h3 i{font-style:normal;color:var(--a);font-size:1.4rem;transition:.25s}
+.card.open h3 i{transform:rotate(45deg)}
+.tech{color:var(--b);font-size:.84rem;margin:6px 0}
+.short{color:var(--mut)}
+.more{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.tag{display:inline-block;font-size:.72rem;padding:2px 10px;border-radius:99px;background:rgba(67,224,193,.14);color:var(--b);margin-left:8px;font-weight:600}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.sk div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.sk h4{margin-bottom:10px;color:var(--a)}
+.chip{display:inline-block;margin:0 6px 8px 0;padding:5px 13px;border-radius:99px;background:var(--bg2);border:1px solid var(--line);font-size:.86rem}
+.cert{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.cert span{padding:8px 16px;border-radius:12px;border:1px dashed var(--a);color:var(--mut);font-size:.9rem}
+.contact{text-align:center}
+.contact p{color:var(--mut);margin-bottom:22px}
+footer{text-align:center;color:var(--mut);padding:26px;border-top:1px solid var(--line);font-size:.85rem}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media(max-width:720px){.about{grid-template-columns:1fr}.avatar{margin:auto;order:-1}nav div a:nth-child(n+4){display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<nav><div class="wrap"><b>ST.</b><div><a href="#about">About</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <h1>Simran Taj</h1>
-    <p class="hero-tagline">
-      Building modern, responsive & animated web interfaces
-    </p>
-    <p class="hero-sub">
-      Graduate Apprentice @ LTIMindtree · Web UI & Full-Stack Developer
-    </p>
-  </header>
+<header class="hero"><div class="wrap">
+<small>Bengaluru, India</small>
+<h1>Hi, I'm <span class="grad">Simran Taj</span></h1>
+<p class="type"><span id="t"></span></p>
+<div class="btns">
+<a class="btn p" href="#projects">View my work</a>
+<a class="btn" href="Simran_Taj_Resume_FAANG.pdf" download>Download resume</a>
+<a class="btn" href="https://github.com/Simrantajk" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/simrantaj/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div></header>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          I’m <strong>Simran Taj</strong>, a Graduate Apprentice at
-          <strong>LTIMindtree</strong> with hands-on experience in
-          <strong>full-stack web development</strong> and a strong focus on
-          <strong>modern Web UI design</strong>.
-        </p>
-        <p>
-          Trained in <strong>C#, .NET Core, Azure, MS SQL</strong> and modern
-          frontend technologies including <strong>HTML, CSS, JavaScript, and React</strong>.
-          I specialize in building <strong>responsive, user-centric interfaces</strong>
-          and integrating scalable APIs.
-        </p>
-        <p>
-          I enjoy crafting <strong>clean, animated, and intuitive user experiences</strong>
-          using real-world workflows and collaborative tools like Git and Jira.
-        </p>
-      </div>
-      <img src="profile.jpg" alt="Simran Taj" class="profile-img" />
-    </div>
-  </section>
+<div class="wrap stats">
+<div class="stat rv"><b data-n="2">0</b><span>releases, zero production defects</span></div>
+<div class="stat rv"><b data-n="200" data-s="+">0</b><span>system and regression test cases</span></div>
+<div class="stat rv"><b data-n="29" data-s="+">0</b><span>defects reported with exact repro steps</span></div>
+<div class="stat rv"><b data-n="99" data-s="+">0</b><span>resumes tested on my ATS analyzer</span></div>
+</div>
 
-  <!-- PROJECT TIMELINE -->
-  <section class="timeline-section" id="projects">
-  <h2 class="section-title">Projects</h2>
+<section id="about"><div class="wrap about rv">
+<div>
+<h2>About me</h2>
+<p>I'm a <strong>software engineer at LTM (LTIMindtree)</strong>, embedded with a developer team on <strong>regulated healthcare mobile software</strong> for Sonova. At work I write <strong>Python</strong> and build <strong>Playwright automation</strong>; in training I built a <strong>C# / ASP.NET Core</strong> REST API with Entity Framework, LINQ, dependency injection and CI/CD.</p>
+<p>I'm at my best when something breaks across layers: app, backend, firmware or hardware. I trace it to the cause and hand developers a clear, reproducible report. I'm also <strong>building AI agents</strong> and completed Hugging Face's Agentic AI course.</p>
+</div>
+<img class="avatar" src="profile.jpg" alt="Simran Taj" onerror="this.outerHTML='<div class=&quot;avatar&quot; style=&quot;display:grid;place-items:center;font-size:4rem;background:#161f3d&quot;>ST</div>'">
+</div></section>
 
-  <div class="timeline">
+<section id="work" style="padding-top:0"><div class="wrap rv">
+<h2>Experience</h2>
+<div class="job">
+<h3>LTM (LTIMindtree) <em>· Sonova client, embedded with the dev team · Sep 2025 to Present</em></h3>
+<ul>
+<li>Contributed to 2 releases of hearing-aid companion apps (iOS/Android, Bluetooth) with zero production defects; supporting the 3rd.</li>
+<li>Building Python + Playwright regression automation to catch regressions earlier each sprint.</li>
+<li>Isolated a Remote Support bug where sessions failed to start because the Rendezvous ID differed between sessions, tracing it across app, backend and firmware tooling.</li>
+<li>Debugged Bluetooth pairing and settings-sync issues across 9+ device pairs using Logcat and device logs.</li>
+</ul>
+</div>
+</div></section>
 
-    <!-- PROJECT 1 -->
-    <div class="timeline-item">
-      <span class="dot recent"></span>
-      <div class="card project-card">
-        <div class="card-header">
-          <h3>Travel Tales <span class="badge">Recent</span></h3>
-          <span class="toggle">+</span>
-        </div>
+<section id="projects" style="padding-top:0"><div class="wrap rv">
+<h2>Projects <small style="font-size:.85rem;color:var(--mut);font-weight:400">(tap a card for details)</small></h2>
+<div class="grid">
 
-        <p class="tech">React • ASP.NET • Entity Framework • MS SQL • Jira</p>
-        <p class="short">
-          Role-based travel planning platform for Travellers and Guides.
-        </p>
+<div class="card"><h3>Travel Tales <span class="tag">LTM training</span><i>+</i></h3>
+<p class="tech">C# · ASP.NET Core · Entity Framework · LINQ · MS SQL</p>
+<p class="short">Team-led REST API app for travellers and guides.</p>
+<div class="more"><ul>
+<li>Led the team as team lead; scored 91% in individual evaluation.</li>
+<li>Full CRUD with 5 endpoints, including update by ID.</li>
+<li>Dependency injection, OOP, GitHub with a CI/CD workflow.</li>
+</ul></div></div>
 
-        <div class="expand">
-          <ul>
-            <li>UI development and component structure</li>
-            <li>Implemented role-based dashboards</li>
-            <li>Integrated REST APIs with ASP.NET backend</li>
-            <li>Worked with Jira for sprint planning and testing</li>
-          </ul>
-          <p class="impact">
-            <strong>Impact:</strong> Improved usability for busy travellers.
-          </p>
-        </div>
-      </div>
-    </div>
+<div class="card"><h3>PayTrack<i>+</i></h3>
+<p class="tech">Python · CLI · CSV/JSON</p>
+<p class="short">Payroll command-line app, built with AI-assisted development.</p>
+<div class="more"><ul>
+<li>Login and employee management.</li>
+<li>Attendance CSV import and PF/PT rules from a mock API.</li>
+<li>Payroll calculation, payslips and CSV/JSON exports.</li>
+</ul></div></div>
 
-    <!-- PROJECT 2 -->
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="card project-card">
-        <div class="card-header">
-          <h3>HealthLink – Healthcare Portal</h3>
-          <span class="toggle">+</span>
-        </div>
+<div class="card"><h3>ATS Resume Analyzer<i>+</i></h3>
+<p class="tech">Python</p>
+<p class="short">Parses resumes and job descriptions and scores keyword matches.</p>
+<div class="more"><ul>
+<li>Normalizes skills before matching.</li>
+<li>Tested on 99+ resumes with 79%+ match consistency.</li>
+</ul></div></div>
 
-        <p class="tech">Django • MySQL • Bootstrap</p>
-        <p class="short">
-          Secure healthcare management system with role-based access.
-        </p>
+<div class="card"><h3>IROPs Airline Disruption Agents <span class="tag">Enterprise</span><i>+</i></h3>
+<p class="tech">AI agents · Agile team</p>
+<p class="short">Agents for disruption detection and passenger re-accommodation.</p>
+<div class="more"><ul>
+<li>Contributed to building individual agents.</li>
+<li>Supported deployment preparation for the agent workflows.</li>
+</ul></div></div>
 
-        <div class="expand">
-          <ul>
-            <li>Designed responsive patient and admin dashboards</li>
-            <li>Implemented secure role-based authentication</li>
-            <li>Optimized database queries for faster access</li>
-          </ul>
-          <p class="impact">
-            <strong>Impact:</strong> Reduced data retrieval time by 40%.
-          </p>
-        </div>
-      </div>
-    </div>
+<div class="card"><h3>HealthLink<i>+</i></h3>
+<p class="tech">Django · MySQL · Bootstrap</p>
+<p class="short">Healthcare portal with role-based access.</p>
+<div class="more"><ul>
+<li>Patient and admin dashboards.</li>
+<li>Access control and patient-record workflows.</li>
+</ul></div></div>
 
-    <!-- PROJECT 3 -->
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="card project-card">
-        <div class="card-header">
-          <h3>E-Commerce Web Application</h3>
-          <span class="toggle">+</span>
-        </div>
+<div class="card"><h3>VTU Grade Calculator<i>+</i></h3>
+<p class="tech">JavaScript · HTML · CSS</p>
+<p class="short">Calculates SGPA and CGPA for VTU students.</p>
+<div class="more"><ul>
+<li>Simple, mobile-friendly interface.</li>
+<li>Live on GitHub Pages.</li>
+</ul></div></div>
 
-        <p class="tech">React • Django • SQL</p>
-        <p class="short">
-          Full-stack shopping platform with secure payments.
-        </p>
+</div></div></section>
 
-        <div class="expand">
-          <ul>
-            <li>Built reusable React UI components</li>
-            <li>Integrated secure payment workflows</li>
-            <li>Optimized backend APIs for performance</li>
-          </ul>
-          <p class="impact">
-            <strong>Impact:</strong> 30% faster API response time.
-          </p>
-        </div>
-      </div>
-    </div>
+<section id="skills" style="padding-top:0"><div class="wrap rv">
+<h2>Skills</h2>
+<div class="sk">
+<div><h4>Languages</h4><span class="chip">Python</span><span class="chip">C#</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">Java</span><span class="chip">HTML/CSS</span></div>
+<div><h4>Backend and web</h4><span class="chip">ASP.NET Core</span><span class="chip">Entity Framework</span><span class="chip">Django</span><span class="chip">React</span><span class="chip">REST APIs</span></div>
+<div><h4>Data and cloud</h4><span class="chip">MySQL</span><span class="chip">MS SQL</span><span class="chip">MongoDB</span><span class="chip">Azure</span><span class="chip">AWS</span></div>
+<div><h4>Quality and tooling</h4><span class="chip">Playwright</span><span class="chip">Regression testing</span><span class="chip">Git/GitHub CI/CD</span><span class="chip">JIRA</span></div>
+</div>
+<div class="cert"><span>Azure Fundamentals (AZ-900)</span><span>Agentic AI, Hugging Face</span><span>Software Testing and Validation, Univ. of Leeds</span><span>Intro to Medical Software, Yale</span></div>
+</div></section>
 
-    <!-- PROJECT 4 -->
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="card project-card">
-        <div class="card-header">
-          <h3>VTU Grade Calculator</h3>
-          <span class="toggle">+</span>
-        </div>
+<section id="contact" class="contact" style="padding-top:0"><div class="wrap rv">
+<h2 style="display:inline-block">Let's talk</h2>
+<p>Open to software engineering roles in Bengaluru.</p>
+<div class="btns">
+<a class="btn p" href="mailto:ms.simrantaj@gmail.com">ms.simrantaj@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/simrantaj/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/Simrantajk" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div></section>
 
-        <p class="tech">Django • JavaScript • SQLite</p>
-        <p class="short">
-          Web app to calculate SGPA and CGPA for VTU students.
-        </p>
+<footer>© 2026 Simran Taj</footer>
 
-        <div class="expand">
-          <ul>
-            <li>Designed simple, mobile-friendly UI</li>
-            <li>Implemented accurate grade calculations</li>
-            <li>Used database indexing for faster queries</li>
-          </ul>
-          <p class="impact">
-            <strong>Impact:</strong> Used by 1000+ students.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- SKILLS -->
-  <section class="skills">
-    <h2>Core Skills</h2>
-    <div class="skills-grid">
-      <span>HTML</span><span>CSS</span><span>JavaScript</span>
-      <span>React</span><span>.NET</span><span>Django</span>
-      <span>SQL</span><span>Azure</span><span>Git</span><span>Jira</span>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Let’s build something meaningful together.</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/simrantaj/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Simrantajk" target="_blank">GitHub</a>
-      <a href="mailto:ms.simrantaj@gmail.com">Email</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    © 2025 Simran Taj
-  </footer>
-
-
-  <script src="script.js"></script>
+<script>
+const roles=["Software engineer","Python and C#/.NET Core developer","Builder of AI agents","Bug hunter across app, backend and firmware"];
+let r=0,c=0,del=false;const t=document.getElementById("t");
+function tick(){const w=roles[r];t.textContent=w.slice(0,c);
+ if(!del&&c<w.length)c++;else if(!del){del=true;return setTimeout(tick,1400)}
+ else if(c>0)c--;else{del=false;r=(r+1)%roles.length}
+ setTimeout(tick,del?35:70)}
+tick();
+document.querySelectorAll(".card").forEach(k=>k.addEventListener("click",()=>{
+ const m=k.querySelector(".more"),o=k.classList.toggle("open");m.style.maxHeight=o?m.scrollHeight+"px":0}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");
+ const n=e.target.querySelector("[data-n]");if(n&&!n.d){n.d=1;const T=+n.dataset.n,s=n.dataset.s||"";let i=0;
+ const id=setInterval(()=>{i+=Math.max(1,Math.ceil(T/40));if(i>=T){i=T;clearInterval(id)}n.textContent=i+s},30)}
+ io.unobserve(e.target)}),{threshold:.2});
+document.querySelectorAll(".rv").forEach(x=>io.observe(x));
+</script>
 </body>
 </html>
